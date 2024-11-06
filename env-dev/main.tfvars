@@ -4,4 +4,3 @@ vpc = {
   }
 }
 
-vpc_name = "dev"
