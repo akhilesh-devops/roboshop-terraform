@@ -16,7 +16,7 @@ module "alb" {
 
   for_each        = var.alb
   internal        = each.value["internal"]
-  lb_type         = each.value["lb_type"]
+  alb_type         = each.value["alb_type"]
   sg_ingress_cidr = each.value["sg_ingress_cidr"]
   sg_port         = each.value["sg_port"]
   tags            = var.tags
