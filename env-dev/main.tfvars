@@ -29,3 +29,5 @@ tags = {
   cost_center   = "ecom_rs"
   created_by    = "terraform"
 }
+
+env = "dev"
