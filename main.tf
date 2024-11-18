@@ -11,4 +11,13 @@ module "vpc" {
   env               = var.env
 }
 
-
+# module "alb" {
+#   source   = "git::https://github.com/akhilesh-devops/tf-module-alb.git"
+#
+#   for_each          = var.alb
+#   internal          = each.value["internal"]
+#   lb_type           = each.value["lb_type"]
+#   sg_ingress_cidr   = each.value["sg_ingress_cidr"]
+#   tags              = var.tags
+#   env               = var.env
+# }

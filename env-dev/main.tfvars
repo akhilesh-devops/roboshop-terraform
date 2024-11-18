@@ -32,3 +32,15 @@ tags = {
 
 env = "dev"
 
+alb = {
+  private = {
+    internal = false
+    lb_type  = "application"
+    sg_ingress_cidr = ["172.31.0.0/16", "10.0.0.0/16"]
+  }
+  public = {
+    internal = true
+    lb_type  = "application"
+    sg_ingress_cidr = ["0.0.0.0/0"]
+  }
+}
