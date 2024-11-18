@@ -10,3 +10,9 @@ module "vpc" {
   tags              = var.tags
   env               = var.env
 }
+
+module "alb" {
+  source = "git::https://github.com/akhilesh-devops/tf-module-alb.git"
+
+
+}
