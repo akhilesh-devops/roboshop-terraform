@@ -6,3 +6,5 @@ variable "tags" {}
 variable "env" {}
 variable "alb" {}
 variable "docdb" {}
+variable "instance_class" {}
+variable "instance_count" {}

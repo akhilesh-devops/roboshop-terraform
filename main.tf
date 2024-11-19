@@ -38,4 +38,6 @@ module "docdb" {
   sg_ingress_cidr         = local.app_subnets_cidr
   vpc_id                  = local.vpc_id
   engine_version          = each.value["engine_version"]
+  instance_class          = each.value["instance_class"]
+  instance_count          = each.value["instance_count"]
 }
