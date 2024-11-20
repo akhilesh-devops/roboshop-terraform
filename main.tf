@@ -69,7 +69,7 @@ module "elasticache" {
   for_each                  = var.elasticache
   tags                      = var.tags
   env                       = var.env
-  subnet_ids                = local.app_subnets_cidr
+  subnet_ids                = local.db_subnets
   port                      = each.value["port"]
   sg_ingress_cidr           = local.app_subnets_cidr
   vpc_id                    = local.vpc_id
