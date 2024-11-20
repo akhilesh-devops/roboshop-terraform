@@ -62,3 +62,24 @@ module "vpc" {
 #   instance_count          = each.value["instance_count"]
 #   skip_final_snapshot     = each.value["skip_final_snapshot"]
 # }
+
+module "elasticache" {
+  source                    = "git::https://github.com/akhilesh-devops/tf-module-elasticache.git"
+
+  for_each                  = var.elasticache
+  tags                      = var.tags
+  env                       = var.env
+  subnet_ids                = local.app_subnets_cidr
+  port                      = each.value["port"]
+  sg_ingress_cidr           = local.app_subnets_cidr
+  vpc_id                    = local.vpc_id
+  family                    = each.value["family"]
+  engine_version            = each.value["engine_version"]
+  num_cache_nodes           = each.value["num_cache_nodes"]
+  node_type                 = each.value["node_type"]
+  engine                    = each.value["engine"]
+  elasticache_type          = each.value["elasticache_type"]
+}
+
+
+
