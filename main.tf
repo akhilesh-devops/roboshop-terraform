@@ -25,22 +25,22 @@ module "vpc" {
 #   sg_port           = each.value["sg_port"]
 # }
 
-module "docdb" {
-  source = "git::https://github.com/akhilesh-devops/tf-module-docdb.git"
-
-  for_each                = var.docdb
-  tags                    = var.tags
-  env                     = var.env
-  subnet_ids              = local.db_subnets
-  backup_retention_period = each.value["backup_retention_period"]
-  preferred_backup_window = each.value["preferred_backup_window"]
-  skip_final_snapshot     = each.value["skip_final_snapshot"]
-  sg_ingress_cidr         = local.app_subnets_cidr
-  vpc_id                  = local.vpc_id
-  engine_version          = each.value["engine_version"]
-  instance_class          = each.value["instance_class"]
-  instance_count          = each.value["instance_count"]
-}
+# module "docdb" {
+#   source = "git::https://github.com/akhilesh-devops/tf-module-docdb.git"
+#
+#   for_each                = var.docdb
+#   tags                    = var.tags
+#   env                     = var.env
+#   subnet_ids              = local.db_subnets
+#   backup_retention_period = each.value["backup_retention_period"]
+#   preferred_backup_window = each.value["preferred_backup_window"]
+#   skip_final_snapshot     = each.value["skip_final_snapshot"]
+#   sg_ingress_cidr         = local.app_subnets_cidr
+#   vpc_id                  = local.vpc_id
+#   engine_version          = each.value["engine_version"]
+#   instance_class          = each.value["instance_class"]
+#   instance_count          = each.value["instance_count"]
+# }
 
 module "rds" {
   source                  = "git::https://github.com/akhilesh-devops/tf-module-rds.git"
