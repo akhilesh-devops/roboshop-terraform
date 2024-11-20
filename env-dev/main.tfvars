@@ -57,3 +57,9 @@ docdb = {
     instance_class          = "db.t3.medium"
   }
 }
+
+rds = {
+  main = {
+
+  }
+}

@@ -41,3 +41,13 @@ module "docdb" {
   instance_class          = each.value["instance_class"]
   instance_count          = each.value["instance_count"]
 }
+
+module "rds" {
+  source = "git::https://github.com/akhilesh-devops/tf-module-rds.git"
+
+  for_each               = var.rds
+  tags                    = var.tags
+  env                     = var.env
+  subnet_ids              = local.db_subnets
+
+}
