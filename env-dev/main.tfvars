@@ -18,7 +18,7 @@ vpc = {
   }
 }
 
-ssh_ingress_cidr  = "172.31.38.156/32"
+ssh_ingress_cidr  = ["172.31.38.156/32"]
 default_vpc_id    =  "vpc-0bb2ad876599ca0f1"
 default_vpc_cidr  = "172.31.0.0/16"
 default_vpc_route_table_id = "rtb-058289fa903d901c4"
