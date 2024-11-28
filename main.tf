@@ -85,6 +85,7 @@ module "rabbitmq" {
   source                    = "git::https://github.com/akhilesh-devops/tf-module-rabbitmq.git"
   tags                      = var.tags
   env                       = var.env
+  zone_id                   = var.zone_id
 
   for_each                  = var.rabbitmq
 

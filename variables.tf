@@ -10,3 +10,4 @@ variable "rds" {}
 variable "elasticache" {}
 variable "rabbitmq" {}
 variable "ssh_ingress_cidr" {}
+variable "zone_id" {}
