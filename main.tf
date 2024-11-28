@@ -83,14 +83,16 @@ module "elasticache" {
 
 module "rabbitmq" {
   source                    = "git::https://github.com/akhilesh-devops/tf-module-rabbitmq.git"
-
-  for_each                  = var.rabbitmq
   tags                      = var.tags
   env                       = var.env
+
+  for_each                  = var.rabbitmq
+
+  vpc_id                    = local.vpc_id
   subnet_ids                = local.db_subnets
-  instance_type             = each.value["instance_type"]
   sg_ingress_cidr           = local.app_subnets_cidr
-  ssh_ingress_cidr          = each.value["ssh_ingress_cidr"]
+  instance_type             = each.value["instance_type"]
+  ssh_ingress_cidr          = var.ssh_ingress_cidr
 }
 
 
